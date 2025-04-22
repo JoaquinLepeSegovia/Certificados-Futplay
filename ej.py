@@ -53,7 +53,6 @@ columnas_secciones = {
     ]
 }
 
-
 # Generar un PDF por persona
 for index, fila in df.iterrows():
     nombre = str(fila.get("Nombre", f"persona_{index}")).replace(" ", "_")
@@ -62,9 +61,6 @@ for index, fila in df.iterrows():
     pdf.add_font("DejaVu", "", ruta_fuente, uni=True)
     pdf.add_font("DejaVu", "B", "DejaVu_Sans/DejaVuSans-bold.ttf", uni=True)
     pdf.set_font("DejaVu", "", 12)
-
-    # Agregar logo (ajusta la ruta y el tamaño según sea necesario)
-    pdf.image("logo.png", x=10, y=30, w=20)  # x, y, w son posición y tamaño del logo
 
     # Encabezado
     pdf.set_fill_color(49, 124, 209)
